@@ -32,7 +32,7 @@ class Kendama(db.Model):
 # =============================== VIEWS ===============================
 
 @app.route("/")
-def hello():
+def home():
     return render_template("base.html") 
 
 
@@ -41,11 +41,15 @@ def kendama_list():
     return "Hey, you currently have no kendamas"
 
 
+@app.route("/add_kendama")
+def new_kendama():
+
+    return render_template("kendama_form.html")
+
 @app.route("/testing")
 def testing_components():
 
     return render_template("dummy.html")
-
 
 
 if __name__ == "__main__":

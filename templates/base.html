@@ -15,8 +15,16 @@
 
   <body>
 
+
     <!-- Page Content -->
     <div class="container">
+
+			<ul class="nav nav-tabs">
+			  <li role="presentation" class="active"><a href="{{url_for("home")}}">Home</a></li>
+			  <li role="presentation"><a href="{{url_for("new_kendama")}}">Add new kendama</a></li>
+			  <li role="presentation"><a href="#">See trending</a></li>
+				<li role="presentation"><a href="{{url_for("testing_components")}}">Testing area</a></li>
+			</ul>	
 
 			<!-- Page Header -->
 			<div class="row">
@@ -29,77 +37,6 @@
 			<!--content here-->
 			{% block body %}
 			{% endblock %}
-
-			<hr>
-
-			<!-- Projects Row -->
-			<div class="row">
-					<!--Image | Header | Table-->
-					<div class="col-md-4 portfolio-item">
-							<a href="#">
-									<img class="img-responsive" src="http://placehold.it/700x600" alt="">
-							</a>
-
-							<h3 class="text-center">
-									<a href="#">Iceberg Girr Zen</a>
-							</h3>
-
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-					</div>
-
-					<div class="col-md-4 portfolio-item">
-							<a href="#">
-									<img class="img-responsive" src="http://placehold.it/700x600" alt="">
-							</a>
-							<h3>
-									<a href="#">Project Name</a>
-							</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-					</div>
-					<div class="col-md-4 portfolio-item">
-							<a href="#">
-									<img class="img-responsive" src="http://placehold.it/700x600" alt="">
-							</a>
-							<h3>
-									<a href="#">Project Name</a>
-							</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-					</div>
-			</div>
-			<!-- /.row -->
-
-			<!-- Projects Row -->
-			<div class="row">
-					<div class="col-md-4 portfolio-item">
-							<a href="#">
-									<img class="img-responsive" src="http://placehold.it/700x600" alt="">
-							</a>
-							<h3>
-									<a href="#">Project Name</a>
-							</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-					</div>
-					<div class="col-md-4 portfolio-item">
-							<a href="#">
-									<img class="img-responsive" src="http://placehold.it/700x600" alt="">
-							</a>
-							<h3>
-									<a href="#">Project Name</a>
-							</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-					</div>
-					<div class="col-md-4 portfolio-item">
-							<a href="#">
-									<img class="img-responsive" src="http://placehold.it/700x600" alt="">
-							</a>
-							<h3>
-									<a href="#">Project Name</a>
-							</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-					</div>
-			</div>
-			<!-- /.row -->
-
 
 		<!--container-->
 		</div>
