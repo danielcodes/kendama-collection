@@ -12,18 +12,40 @@
 
 				<form method="POST" action="/dummy">
 					{{ form.csrf_token }}
-					{{ form.name.label }} {{ form.name(size=20) }} </br>
-					{{ form.brand.label }} {{ form.brand(size=20) }} </br>
-					{{ form.link.label }} {{ form.link(size=50) }} </br>
-					{{ form.description.label }} {{ form.description(size=100) }}
-					<input type="submit" value="Add kendama!">
+
+					<div class="form-group row">
+						<div class="col-md-8">
+							{{ form.name(class="form-control", placeholder="Kendama") }} 
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<div class="col-md-8">
+							{{ form.brand(class="form-control", placeholder="Brand") }} 
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<div class="col-md-8">
+							{{ form.link(class="form-control", placeholder="Link") }} 
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<div class="col-md-8">
+							{{ form.description(class="form-control", placeholder="Description") }} 
+						</div>
+					</div>
+
+					<div class="form-group row">
+						<div class="col-md-8">
+							<button type="submit" class="btn btn-danger btn-block">Add kendama!</button>
+						</div>
+					</div>
+
 				</form>	
-			
 			</div>
 		</div>
-
-
-
 
 
 		<!-- Projects Row -->
