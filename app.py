@@ -50,7 +50,10 @@ class KendamaForm(Form):
 
 @app.route("/")
 def home():
-    return render_template("base.html") 
+
+    kendamas = Kendama.query.all() 
+
+    return render_template("kendamas.html", kendamas=kendamas) 
 
 
 @app.route("/kendamas")
@@ -67,7 +70,6 @@ def new_kendama():
 def testing_components():
 
     form = KendamaForm()
-
     return render_template("dummy.html", form=form)
 
 

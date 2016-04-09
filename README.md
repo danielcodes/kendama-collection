@@ -13,6 +13,7 @@ Primarily starting this app to work with WTForms
 
 ## TODOS
 
+* create page that starts querying data from the database and displaying it on a page
 * Connect current form to interact with the database
 * Replace images with shots of your own
 
