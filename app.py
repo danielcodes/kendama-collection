@@ -1,6 +1,13 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
+
+from flask_wtf import Form
+from wtforms import StringField
+from wtforms.validators import DataRequired
+
 app = Flask(__name__)
+
+app.secret_key = 'ZC4dti6GaxOikyVy0uy3T5XVEwSkmtZD'
 
 # =============================== MODELS ===============================
 # taken from the basic app, so db is created in this same dir
@@ -23,11 +30,21 @@ class Kendama(db.Model):
     def __init__(self, name, brand, link, description):
         self.name = name
         self.brand = brand
-        self.description = description
         self.link = link
+        self.description = description
 
     def __repr__(self):
         return '<Kendama %r>' % self.name
+
+
+# =============================== FORMS ===============================
+
+class KendamaForm(Form):
+    name = StringField('name', validators=[DataRequired()])
+    brand = StringField('brand', validators=[DataRequired()])
+    link = StringField('link', validators=[DataRequired()])
+    description = StringField('description', validators=[DataRequired()])
+
 
 # =============================== VIEWS ===============================
 
@@ -49,7 +66,9 @@ def new_kendama():
 @app.route("/testing")
 def testing_components():
 
-    return render_template("dummy.html")
+    form = KendamaForm()
+
+    return render_template("dummy.html", form=form)
 
 
 if __name__ == "__main__":

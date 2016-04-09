@@ -13,12 +13,13 @@ Primarily starting this app to work with WTForms
 
 ## TODOS
 
-* Display description of your personal kendama in a neat table
-* Create custom CSS to set the images to a certain height (350px) and apply center-block class
+* Connect current form to interact with the database
 * Replace images with shots of your own
 
 ## Notes
 
 * http://statusq.org/archives/2014/10/25/6161/ to set up Bower with Flask
 * https://github.com/BlackrockDigital/startbootstrap-3-col-portfolio 3 column instagram looking page
+* https://flask-wtf.readthedocs.org/en/latest/quickstart.html 
+* https://wtforms.readthedocs.org/en/latest/crash_course.html
 

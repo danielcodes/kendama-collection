@@ -3,6 +3,29 @@
 
 {% block body %}
 
+
+		<h1>Testing out the form here</h1>
+
+		<div class="row">
+		
+			<div class="col-md-6">
+
+				<form method="POST" action="/dummy">
+					{{ form.csrf_token }}
+					{{ form.name.label }} {{ form.name(size=20) }} </br>
+					{{ form.brand.label }} {{ form.brand(size=20) }} </br>
+					{{ form.link.label }} {{ form.link(size=50) }} </br>
+					{{ form.description.label }} {{ form.description(size=100) }}
+					<input type="submit" value="Add kendama!">
+				</form>	
+			
+			</div>
+		</div>
+
+
+
+
+
 		<!-- Projects Row -->
 		<div class="row">
 				<div class="col-md-4 portfolio-item">
@@ -54,6 +77,9 @@
 				</div>
 		</div>
 		<!-- /.row -->
+
+
+		
 
 
 {% endblock %}
