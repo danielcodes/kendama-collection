@@ -8,13 +8,17 @@ Primarily starting this app to work with WTForms
 
 * [x] The main page displays a 3 column grid that displays pictures of kendamas
 * [x] Under the image, there is a header with the name and a table with further description, brand, link to buy
-* [ ] There is a form, that allows me to add a name and link to the kendama picture
+* [x] There is a form, that allows me to add a name and link to the kendama picture
 * [ ] There is a tab with instagram tab with the #kendama filter to see kendama posts
 
 ## TODOS
 
-* fix bug with grid placement 
+* Learn how to upload an image
 * Replace images with shots of your own
+
+## Things I have learned
+
+* using text-center and center-block, to center text and images with bootstrap
 
 ## Notes
 
