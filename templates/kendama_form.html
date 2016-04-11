@@ -1,45 +1,45 @@
 {% extends "base.html" %}
 
-
 {% block body %}
 
 <div class="col-md-6">
 
 	<h1>Enter a new kendama here: </h1>
 
-	<form>
-		<!--Name | Brand | Link | Description-->
-		<div class="form-group row">
-			<div class="col-md-8">
-				<input type="text" class="form-control" id="" placeholder="Kendama">
-			</div>
-		</div>
+		<form method="POST" action="/add_kendama">
+			{{ form.csrf_token }}
 
-		<div class="form-group row">
-			<div class="col-md-8">
-				<input type="text" class="form-control" id="" placeholder="Brand">
+			<div class="form-group row">
+				<div class="col-md-8">
+					{{ form.name(class="form-control", placeholder="Kendama") }} 
+				</div>
 			</div>
-		</div>
 
-		<div class="form-group row">
-			<div class="col-md-8">
-				<input type="link" class="form-control" id="" placeholder="Link to buy">
+			<div class="form-group row">
+				<div class="col-md-8">
+					{{ form.brand(class="form-control", placeholder="Brand") }} 
+				</div>
 			</div>
-		</div>
 
-		<div class="form-group row">
-			<div class="col-md-8">
-				<input type="text" class="form-control" id="description-box" placeholder="Description">
+			<div class="form-group row">
+				<div class="col-md-8">
+					{{ form.link(class="form-control", placeholder="Link") }} 
+				</div>
 			</div>
-		</div>
 
-		<div class="form-group row">
-			<div class="col-md-8">
-				<button type="submit" class="btn btn-danger btn-block">Add kendama!</button>
+			<div class="form-group row">
+				<div class="col-md-8">
+					{{ form.description(class="form-control", placeholder="Description") }} 
+				</div>
 			</div>
-		</div>
 
-	</form>
+			<div class="form-group row">
+				<div class="col-md-8">
+					<button type="submit" class="btn btn-danger btn-block">Add kendama!</button>
+				</div>
+			</div>
+
+		</form>	
 </div>
 
 <div class="col-md-6">
