@@ -52,7 +52,6 @@ class KendamaForm(Form):
 def home():
 
     kendamas = Kendama.query.all() 
-
     return render_template("kendamas.html", kendamas=kendamas) 
 
 
@@ -85,27 +84,18 @@ def new_kendama():
     return render_template("kendama_form.html", form=form)
 
 
-@app.route("/testing", methods=["GET", "POST"])
+@app.route("/delete_all", methods=["POST"])
+def delete_kendamas():
+
+    Kendama.query.delete()
+    db.session.commit()
+    return redirect("/")
+
+
+
+@app.route("/testing", methods=["GET"])
 def testing_components():
 
-    form = KendamaForm()
-    print "hey, testing page"
-    if form.validate_on_submit():
-        # access from content with form.name.data
-        # create new kendama and place it in the database
-        name = form.name.data
-        brand = form.brand.data
-        link = form.link.data
-        desc = form.description.data
-
-        # create the object
-        new_kendama = Kendama(name, brand, link, desc)
-
-        # add it to the db
-        db.session.add(new_kendama)
-        db.session.commit()
-
-        return redirect('/')
     return render_template("dummy.html", form=form)
 
 

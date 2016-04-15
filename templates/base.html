@@ -39,9 +39,10 @@
 		<!--container-->
 		</div>
 
-
 		<script src="/static/bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="/static/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="/static/js/main.js"></script>
+		<script type=text/javascript> $SCRIPT_ROOT = {{ request.script_root|tojson|safe }}; </script>
 
   </body>
 </html>

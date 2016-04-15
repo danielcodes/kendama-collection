@@ -9,40 +9,14 @@
 	<div class="row">
 		<div class="col-md-6">
 
-			<form method="POST" action="/testing">
-				{{ form.csrf_token }}
+			<div id="wat">
+				some division that will be jquery controlled	
+			</div>
 
-				<div class="form-group row">
-					<div class="col-md-8">
-						{{ form.name(class="form-control", placeholder="Kendama") }} 
-					</div>
-				</div>
+			<input id="same" type="button" value="A button">
 
-				<div class="form-group row">
-					<div class="col-md-8">
-						{{ form.brand(class="form-control", placeholder="Brand") }} 
-					</div>
-				</div>
 
-				<div class="form-group row">
-					<div class="col-md-8">
-						{{ form.link(class="form-control", placeholder="Link") }} 
-					</div>
-				</div>
 
-				<div class="form-group row">
-					<div class="col-md-8">
-						{{ form.description(class="form-control", placeholder="Description") }} 
-					</div>
-				</div>
-
-				<div class="form-group row">
-					<div class="col-md-8">
-						<button type="submit" class="btn btn-danger btn-block">Add kendama!</button>
-					</div>
-				</div>
-
-			</form>	
 		</div>
 	</div>
 

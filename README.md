@@ -15,6 +15,7 @@ Primarily starting this app to work with WTForms
 
 * Learn how to upload an image
 * Add some ajax to be able to remove items through client side
+* Overall, just the app needs clean up
 * Replace images with shots of your own
 
 ## Things I have learned
