@@ -1,12 +1,20 @@
+import os
+
 from flask import Flask, render_template, redirect
 from flask_sqlalchemy import SQLAlchemy
 
 from flask_wtf import Form
+from flask_wtf.file import FileField
 from wtforms import StringField
 from wtforms.validators import DataRequired
 
+from werkzeug import secure_filename
+
+UPLOAD_FOLDER = './static/uploads/'
+
 app = Flask(__name__)
 
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = 'ZC4dti6GaxOikyVy0uy3T5XVEwSkmtZD'
 
 # =============================== MODELS ===============================
@@ -24,14 +32,14 @@ class Kendama(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), unique=True)
     brand = db.Column(db.String(50))
-    link = db.Column(db.String(100))
     description = db.Column(db.Text())
+    image = db.Column(db.String(50))
 
-    def __init__(self, name, brand, link, description):
+    def __init__(self, name, brand, description, image):
         self.name = name
         self.brand = brand
-        self.link = link
         self.description = description
+        self.image = image 
 
     def __repr__(self):
         return '<Kendama %r>' % self.name
@@ -42,9 +50,8 @@ class Kendama(db.Model):
 class KendamaForm(Form):
     name = StringField('name', validators=[DataRequired()])
     brand = StringField('brand', validators=[DataRequired()])
-    link = StringField('link', validators=[DataRequired()])
     description = StringField('description', validators=[DataRequired()])
-
+    image = FileField('image')
 
 # =============================== VIEWS ===============================
 
@@ -70,11 +77,16 @@ def new_kendama():
         # create new kendama and place it in the database
         name = form.name.data
         brand = form.brand.data
-        link = form.link.data
         desc = form.description.data
+        image = form.image.data
+
+        # this gives the name
+        filename = secure_filename(form.image.data.filename)
+        # saving it to filesystem
+        image.save( os.path.join(app.config['UPLOAD_FOLDER'], filename ))
 
         # create the object
-        new_kendama = Kendama(name, brand, link, desc)
+        new_kendama = Kendama(name, brand, desc, filename)
 
         # add it to the db
         db.session.add(new_kendama)
@@ -91,12 +103,10 @@ def delete_kendamas():
     db.session.commit()
     return redirect("/")
 
-
-
 @app.route("/testing", methods=["GET"])
 def testing_components():
 
-    return render_template("dummy.html", form=form)
+    return render_template("dummy.html")
 
 
 if __name__ == "__main__":
