@@ -13,9 +13,8 @@ Primarily starting this app to work with WTForms
 
 ## TODOS
 
-* Learn how to upload an image
+* Start looking into Instagram's API 
 * Add some ajax to be able to remove items through client side
-* Overall, just the app needs clean up
 * Replace images with shots of your own
 
 ## Things I have learned
