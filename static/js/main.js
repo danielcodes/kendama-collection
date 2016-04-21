@@ -1,15 +1,12 @@
-$(document).ready(function(){
 
-  $("#wat").css("color", "red");
+/* Todo - add delete individual kendama function through button click
+ * first user story make the parent element dissappear
+*/
 
-  $("#same").on("click", function(){
+$("#gone").on("click", function(){
 
-	$.get("/", function(data){
-	  console.log(data);	
-	});
-	
-  
-  
-  });
+	//use this to refer to current element
+	console.log($(this).parent());
 
 });
+

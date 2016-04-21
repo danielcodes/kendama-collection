@@ -22,9 +22,10 @@
 		</div>
 	</div>
 
-	<h2 class="text-center">Kendamas</h2>
 	<!--display list of kendamas-->
 	{% if kendamas %}
+
+		<h2 class="text-center">Kendamas</h2>
 
 		<!--Name | brand | link | description-->
 		<!-- Kendamas Row -->
@@ -37,9 +38,12 @@
 						<img class="img-responsive img-height img-rounded center-block" src="/static/uploads/{{kendama.image}}" alt="">
 					</div>
 
-					<h3 class="text-center">
-						<a href="http://shop.kendamausa.com/collections/tribute-kendamas/products/half-split-red-top-half-and-white-silk-matte">{{kendama.name}}</a>
-					</h3>
+					<h2 class="text-center">
+						<a href="https://www.google.com">{{kendama.name}}</a> </br>
+
+						<input class="btn btn-success" type="button" value="Edit kendama">
+						<input class="btn btn-danger" type="button" value="Delete kendama">
+					</h2>
 
 					<ul class="list-group">
 						<li class="list-group-item"> <strong>Brand</strong> {{kendama.brand}} </li>

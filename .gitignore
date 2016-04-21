@@ -1,3 +1,4 @@
 *.pyc
 static/bower_components/
 app.db
+static/uploads/
