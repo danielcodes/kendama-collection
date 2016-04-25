@@ -35,18 +35,20 @@ $(".delete-ken").on("click", function(){
 		success: function(result) {
 			//can provided some type of message that says deleted kendama
 			console.log(result);
+			console.log("the id is ", ken_id);
+
+			//since I can grab the id
+			//some coersion here, will add a string and a number, we want string, id select
+			var kendama_block = $("#" + ken_id).parent().parent();
+
+			kendama_block.fadeOut("slow", function(){
+				$(this).remove();
+			});
+
 		},
 		error: function(){
 			console.log("hey error son");
 		}
-	});
-
-		
-	//first parent is the header, then the div
-	var parentEle = $(this).parent().parent();
-
-	parentEle.fadeOut("slow", function(){
-		$(this).remove();
 	});
 
 });

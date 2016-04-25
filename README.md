@@ -17,7 +17,8 @@ Primarily starting this app to work with WTForms
 * Replace images with shots of your own
 * Start looking into Instagram's API 
 * Can delete through client side, make change on the backend
-
+* Handle error in a better manner, making sure form is completed, etc
+* Do a filesystem operation that deletes the image
 
 ## Things I have learned
 

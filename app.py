@@ -104,9 +104,11 @@ def delete_one():
     print request.json
 
     # get kendama and delete it
+    '''
     ken = Kendama.query.get(ken_id)
     db.session.delete(ken)
     db.session.commit()
+    '''
 
     return "successfully deleted kendama"
 
