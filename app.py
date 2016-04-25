@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, request
 from flask_sqlalchemy import SQLAlchemy
 
 from flask_wtf import Form
@@ -94,6 +94,21 @@ def new_kendama():
 
         return redirect('/')
     return render_template("kendama_form.html", form=form)
+
+
+@app.route("/delete_kendama", methods=["POST"])
+def delete_one():
+
+    #the data provided from the client is just an int, the id number
+    ken_id = request.json
+    print request.json
+
+    # get kendama and delete it
+    ken = Kendama.query.get(ken_id)
+    db.session.delete(ken)
+    db.session.commit()
+
+    return "successfully deleted kendama"
 
 
 @app.route("/delete_all", methods=["POST"])

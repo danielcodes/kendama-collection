@@ -9,20 +9,22 @@ Primarily starting this app to work with WTForms
 * [x] The main page displays a 3 column grid that displays pictures of kendamas
 * [x] Under the image, there is a header with the name and a table with further description, brand, link to buy
 * [x] There is a form, that allows me to add a name and link to the kendama picture
-* [ ] Kendamas can be deleted through a button (individually)
+* [x] Kendamas can be deleted through a button (individually)
 * [ ] There is a tab with instagram tab with the #kendama filter to see kendama posts
 
 ## TODOS
 
 * Replace images with shots of your own
 * Start looking into Instagram's API 
-* Add some ajax to be able to remove items through client side
+* Can delete through client side, make change on the backend
+
 
 ## Things I have learned
 
 * using text-center and center-block, to center text and images with bootstrap
 * had this problem before where images become pixelated, resize images to 600x350 for a good fit
 * how to use pinta, use rectangle select, go to image up top and click crop to selection
+* using ajax to do a POST request, thanks to this article http://stackoverflow.com/questions/14908864/how-can-i-use-data-posted-from-ajax-in-flask
 
 ## Notes
 

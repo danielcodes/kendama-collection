@@ -24,6 +24,24 @@ $("#gone").on("click", function(){
 //from the delete button, two levels up to target the kendama block
 $(".delete-ken").on("click", function(){
 
+	//pass id of kendama to delete
+	var ken_id = $(this).attr("id");
+
+	$.ajax({
+		type : "POST",
+		url : "/delete_kendama",
+		data: ken_id,
+		contentType: 'application/json;charset=UTF-8',
+		success: function(result) {
+			//can provided some type of message that says deleted kendama
+			console.log(result);
+		},
+		error: function(){
+			console.log("hey error son");
+		}
+	});
+
+		
 	//first parent is the header, then the div
 	var parentEle = $(this).parent().parent();
 
@@ -32,6 +50,4 @@ $(".delete-ken").on("click", function(){
 	});
 
 });
-
-
 
