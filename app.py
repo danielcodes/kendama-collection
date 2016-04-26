@@ -103,12 +103,24 @@ def delete_one():
     ken_id = request.json
     print request.json
 
-    # get kendama and delete it
-    '''
+    # get kendama and delete it + image
     ken = Kendama.query.get(ken_id)
+
+    name = ken.image.encode('utf-8')
+
+    # deleting image from fs
+    # cd into uploads
+    os.chdir('static/uploads')
+
+    # if found delete
+    if os.path.exists(name):
+        os.remove(name)
+
+    # go back to base dir
+    os.chdir(BASE_DIR)
+
     db.session.delete(ken)
     db.session.commit()
-    '''
 
     return "successfully deleted kendama"
 

@@ -14,11 +14,10 @@ Primarily starting this app to work with WTForms
 
 ## TODOS
 
-* Replace images with shots of your own
 * Start looking into Instagram's API 
-* Can delete through client side, make change on the backend
+* Page needs some redesign now that it is functional
+* Replace images with shots of your own
 * Handle error in a better manner, making sure form is completed, etc
-* Do a filesystem operation that deletes the image
 
 ## Things I have learned
 
@@ -26,6 +25,7 @@ Primarily starting this app to work with WTForms
 * had this problem before where images become pixelated, resize images to 600x350 for a good fit
 * how to use pinta, use rectangle select, go to image up top and click crop to selection
 * using ajax to do a POST request, thanks to this article http://stackoverflow.com/questions/14908864/how-can-i-use-data-posted-from-ajax-in-flask
+* removing an image from the file system, 3 steps, cd into dir, check if image is there, delete it and change back to original dir path
 
 ## Notes
 
