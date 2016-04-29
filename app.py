@@ -59,7 +59,31 @@ class KendamaForm(Form):
 def home():
 
     kendamas = Kendama.query.all() 
-    return render_template("kendamas.html", kendamas=kendamas) 
+
+    form = KendamaForm()
+    if form.validate_on_submit():
+        # access from content with form.name.data
+        # create new kendama and place it in the database
+        name = form.name.data
+        brand = form.brand.data
+        desc = form.description.data
+        image = form.image.data
+
+        # this gives the name
+        filename = secure_filename(form.image.data.filename)
+        # saving it to filesystem
+        image.save( os.path.join(app.config['UPLOAD_FOLDER'], filename ))
+
+        # create the object
+        new_kendama = Kendama(name, brand, desc, filename)
+
+        # add it to the db
+        db.session.add(new_kendama)
+        db.session.commit()
+
+        return redirect('/')
+
+    return render_template("kendamas.html", kendamas=kendamas, form=form) 
 
 
 @app.route("/kendamas")

@@ -14,6 +14,7 @@ Primarily starting this app to work with WTForms
 
 ## TODOS
 
+* Place the form in a modal rather than navigating to a new tab
 * Start looking into Instagram's API 
 * Page needs some redesign now that it is functional
 * Replace images with shots of your own
