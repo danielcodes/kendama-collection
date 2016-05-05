@@ -15,16 +15,26 @@
 			  This is a to-be CRUD site where I can show off my collection of kendamas. I started playing kendama around Summer '15. My brother had brough one home from a friend's house. I wasn't too impressed when i first saw it. This all changed when I did a quick search on the internet and saw the tricks that you could do with it. I remember that night attempting to try the basic moshikame. It took me about a day or so before I could do it, after that I was hooked.
 			</p>
 
-			<h3>Dange Zone</h3>
-			<form action="/delete_all" method="POST">
-				<input class="btn btn-primary btn-danger" type="submit" value="Remove kendamas">
-			</form>
+			<h2>Some buttons</h2>
+			<div>
+				<p>
+					you can add a new kendama here
 
-			<!-- Button trigger modal -->
-			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-				Add a new kendama	
-			</button>
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+						Add a new kendama	
+					</button>
+				</p>
 
+				<form action="/delete_all" method="POST" class="form-inline">
+					or delete them all here
+					<input class="btn btn-primary btn-danger" type="submit" value="Remove kendamas">
+				</form>
+			</div>
+
+
+
+			
 			<!-- Modal -->
 			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 				<div class="modal-dialog" role="document">
@@ -33,7 +43,6 @@
 					<div class="modal-content">
 
 						<!--need to have a form being passed here-->
-
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 							<h4 class="modal-title" id="myModalLabel">Adding a new kendama: </h4>
@@ -85,7 +94,7 @@
 
 		</div>
 	</div>
-
+	
 	<!--display list of kendamas-->
 	{% if kendamas %}
 
@@ -123,6 +132,4 @@
 	{% endif %}
 
 {% endblock %}
-
-
 
